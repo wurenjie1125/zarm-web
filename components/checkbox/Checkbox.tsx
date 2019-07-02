@@ -6,9 +6,9 @@ class Checkbox extends Component<PropsType, any> {
   static Group;
 
   static defaultProps = {
-    prefixCls: 'za-checkbox',
+    prefixCls: 'zw-checkbox',
     defaultChecked: false,
-    isDisabled: false,
+    disabled: false,
     indeterminate: false,
     onChange: () => {},
   };
@@ -43,13 +43,12 @@ class Checkbox extends Component<PropsType, any> {
     const {
       prefixCls,
       value,
-      isDisabled,
+      disabled,
       className,
       children,
       style,
       indeterminate,
     } = this.props;
-    const disabled = 'disabled' in this.props || isDisabled;
     const cls = classnames(prefixCls, className, {
       'is-checked': checked,
       'is-disabled': disabled,
@@ -69,7 +68,7 @@ class Checkbox extends Component<PropsType, any> {
           />
           <span className={`${prefixCls}__inner`} />
         </span>
-        {children}
+        <span className={`${prefixCls}__label`}>{children}</span>
       </label>
     );
   }

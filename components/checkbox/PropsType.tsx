@@ -7,7 +7,7 @@ export interface GroupProps {
 
 export default interface PropsType {
   prefixCls?: string;
-  value?: string;
+  value: string;
   checked?: boolean;
   defaultChecked?: boolean;
   className?: string;
